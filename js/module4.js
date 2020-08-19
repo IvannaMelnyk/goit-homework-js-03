@@ -1,23 +1,28 @@
-function formatString(string, maxLength = 40) {
+const countTotalSalary = function (employees) {
+    'use strict';
     // Write code under this line
-    const array = string.split('');
-    let shortLength = '';
 
-    for (let i = 0; i < array.length; i += 1) {
-        if (array.length > maxLength) {
-            shortLength = string.slice(0, maxLength) + "...";
-        } else {
-            shortLength = string;
-        }
+    const values = Object.values(employees)
+    let totalSalary = 0;
+    for (const value of values) {
+        totalSalary += value;
     }
-    return shortLength;
+    return totalSalary
+};
+
+// Объекты и ожидаемый результат
+const developers = {
+    mango: 300,
+    poly: 250,
+    alfred: 450,
+};
+console.log(countTotalSalary(developers));
+// 1000
+
+const supports = {
+    kiwi: 200,
+    lux: 150,
+    chelsy: 150,
 }
-
-console.log(formatString('Curabitur ligula sapien, tincidunt non.'));
-// 'Curabitur ligula sapien, tincidunt non.'
-
-console.log(formatString('Vestibulum facilisis, purus nec pulvinar iaculis.'));
-// 'Vestibulum facilisis, purus nec pulvinar...'
-
-console.log(formatString('Vestibulum facilisis, purus nec pulvinar iaculis.', 30));
-// 'Vestibulum facilisis, purus ne...'
+//console.log(countTotalSalary(supports));
+// 500
