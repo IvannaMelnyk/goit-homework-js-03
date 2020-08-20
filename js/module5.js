@@ -1,8 +1,15 @@
 function getAllPropValues(array, prop) {
     'use strict';
     // Write code under this line 
+    let property = []
+    for (const arr of array)
+        if (prop in arr) {
+            property.push(arr[prop]);
+        }
+    return property
 
 }
+
 
 // Объекты и ожидаемый результат
 const products = [
@@ -15,11 +22,11 @@ const products = [
     { name: 'Захват', price: 1200, quantity: 2 },
 ];
 
-//console.log(getAllPropValues(products, 'name'));
+console.log(getAllPropValues(products, 'name'));
 // ['Радар', 'Радар', 'Радар', 'Сканер', 'Сканер', 'Дроид', 'Захват']
 
-//console.log(getAllPropValues(products, 'quantity'));
+console.log(getAllPropValues(products, 'quantity'));
 // [4, 2, 1, 1, 3, 7, 2]
 
-//console.log(getAllPropValues(products, 'category'));
+console.log(getAllPropValues(products, 'category'));
 //  []
